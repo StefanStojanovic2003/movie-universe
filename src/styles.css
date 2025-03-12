@@ -17,12 +17,15 @@ html{
     font-size: 62.5%;
 }
 
-body{
-    font-family: monospace;
+html,
+body {  
+    height: 100%;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
 
 .container{
     margin: 0 auto;
+    max-width: 130rem;
 }
 
 .grid{
@@ -64,3 +67,5 @@ body{
 .paragraph{
     font-size: 2.4rem;
 }
+
+
