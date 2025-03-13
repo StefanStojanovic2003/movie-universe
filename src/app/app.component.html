@@ -1,4 +1,15 @@
-<p>
-  <a routerLink="/">Home</a> | <a routerLink="/about">About</a>
-</p>
+<header class="header">
+  <nav class="navigation">
+    <a routerLink="/">
+      <img class="logo-image" src="assets/logo.png" alt="Movie Universe Logo">
+    </a>
+    <div class="navigation-links">
+      <a class="navigation-link" routerLink="/">Home</a>
+      <a class="navigation-link" routerLink="/about">About</a>
+      <a class="navigation-link" routerLink="/gallery">Gallery</a>
+      <a class="navigation-link" routerLink="/">Contact Us</a>
+      <a class="navigation-link log-in-button" routerLink="/">LogIn</a>
+    </div>
+  </nav>
+</header>
 <router-outlet />

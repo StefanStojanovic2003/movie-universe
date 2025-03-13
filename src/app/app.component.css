@@ -1,0 +1,45 @@
+.header{
+    background-color: transparent;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.navigation{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-image{
+    width: 20rem;
+    height: 8rem;
+}
+
+.navigation-links{
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+}
+
+.navigation-link{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.log-in-button{
+    background-color: var(--orange);
+    width: 12rem;
+    height: 5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
