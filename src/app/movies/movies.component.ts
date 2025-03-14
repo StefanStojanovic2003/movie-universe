@@ -5,10 +5,11 @@ import { MovieService } from '../../services/movie.service';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { AxiosError } from 'axios';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
-  imports: [NgIf, NgFor, MatCardModule, MatButtonModule],
+  imports: [NgIf, NgFor, MatCardModule, MatButtonModule, RouterLink],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.css'
 })
