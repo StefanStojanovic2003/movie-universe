@@ -25,8 +25,8 @@
                 <span class="card-heading-span">{{movie.runTime}}min</span>
             </mat-card-content>
             <mat-card-actions class="cta-card-buttons">
-              <button  class="cta-card-button">Details</button>
-              <button  class="cta-card-button">Reserve</button>
+              <a class="cta-card-button" [routerLink]="['details/',movie.movieId]">Details</a>
+              <a href="#" class="cta-card-button">Reserve</a>
             </mat-card-actions>
         </mat-card>
     </div>

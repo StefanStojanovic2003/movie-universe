@@ -53,6 +53,7 @@
 }
 
 .cta-card-button{
+    text-decoration: none;
     max-width: 16rem;
     max-height: 60rem;
     padding: 1rem;
@@ -75,8 +76,8 @@
 .cta-movie-button{
     background-color: var(--orange);
     padding: 1rem 2rem;
-    text-decoration: none;
     color: var(--brown);
+    text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 3.2rem;
