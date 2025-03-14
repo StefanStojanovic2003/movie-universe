@@ -1,1 +1,25 @@
-<p>movies works!</p>
+<section class="hero-section">
+    <div class="hero-headings">
+        <h1 class="heading-primary">Movies Page</h1>
+        <h2 class="heading-secondary">You can see the entire offer here</h2>
+    </div>
+</section>
+<section class="movies-section">
+    <div class="container grid grid--3-column" *ngIf="movies">
+        <mat-card class="example-card" *ngFor="let movie of movies">
+            <img class="movie-poster" src="{{movie.poster}}" alt="{{movie.originalTitle}}">
+            <mat-card-content>
+                <h3 class="paragraph card-heading">Title:</h3>
+                <span class="card-heading-span">{{movie.originalTitle}}</span>
+                <h3 class="paragraph card-heading">Short Description:</h3>
+                <span class="card-heading-span">{{movie.shortDescription}}</span>
+                <h3 class="paragraph card-heading">Duration:</h3>
+                <span class="card-heading-span">{{movie.runTime}}min</span>
+            </mat-card-content>
+            <mat-card-actions class="cta-card-buttons">
+              <button class="cta-card-button">Details</button>
+              <button class="cta-card-button">Reserve</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</section>

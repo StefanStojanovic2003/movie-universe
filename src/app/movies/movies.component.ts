@@ -1,11 +1,26 @@
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { MovieModel } from '../../models/movie.model';
+import { MovieService } from '../../services/movie.service';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import { AxiosError } from 'axios';
 
 @Component({
   selector: 'app-movies',
-  imports: [],
+  imports: [NgIf, NgFor, MatCardModule, MatButtonModule],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.css'
 })
 export class MoviesComponent {
+  
+  movies : MovieModel[] | null = null
+
+  constructor(){
+  
+      MovieService.getMovies()
+        .then(rsp=> this.movies = rsp.data)
+  
+    }
 
 }
