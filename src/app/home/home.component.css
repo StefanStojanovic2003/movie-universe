@@ -1,7 +1,91 @@
+/* HERO SECTION */
+
 .hero-section{
     width: 100%;
 }
 
 .video-bg{
     width: 100%;
+}
+
+
+/* MOVIE SECTION */
+
+.movies-section{
+    margin-top: -0.3rem;
+    padding: 8.6rem 0;
+    background-color: var(--brown);
+}
+
+.movies-section-heading{
+    margin-bottom: 10rem;
+}
+
+.example-card{
+    max-width: 50rem;
+    max-height: 80rem;
+    padding: 3rem 4.5rem;
+    background-color: var(--light-brown);
+}
+
+.movie-poster{
+    max-width: 39rem;
+    max-height: 32rem;
+    border-radius: 2rem;
+}
+
+.card-heading{
+    color: var(--orange);
+    margin: 0.8rem 0rem;
+}
+
+.card-heading-span{
+    color: var(--brown);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.cta-card-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cta-card-button{
+    max-width: 16rem;
+    max-height: 60rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--brown);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--yellow);
+}
+
+.movies-section-cta-button{
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-movie-button{
+    background-color: var(--orange);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: var(--brown);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3.2rem;
+    border-radius: 1rem;
+}
+
+/* TESTIMONIAL SECTION */
+
+.testimonial-section{
+    background-color: var(--light-brown);
+    padding: 8.6rem 0rem;
 }

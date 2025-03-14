@@ -1,18 +1,48 @@
 <section class="hero-section">
+
     <video class="video-bg" autoplay muted loop>    
         <source src="/assets/herovideo.mp4" type="video/mp4">
     </video>
     
 </section>
 
-<div *ngIf="error">
-    <h3>Oops, an error occured!</h3>
-    <p>{{error}}</p>
-</div>
-<div *ngIf="movies">
-    <p *ngFor="let movie of movies">{{movie.movieId}} {{movie.originalTitle}} {{movie.runTime}} </p>
-    <pre>{{movies | json}}</pre>
-</div>
-<div *ngIf="!movies && !error">
-    <p>podaci se ucitavaju</p>
-</div>
+
+<section class="movies-section">
+    <div *ngIf="error">
+        <h3>Oops, an error occured!</h3>
+        <p>{{error}}</p>
+    </div>
+    <div class="container movies-section-heading">
+        <h2 class="heading-secondary">Discover Your Next Favorite Movie!</h2>
+    </div>
+    <div class="container grid grid--3-column" *ngIf="movies">
+        <mat-card class="example-card" appearance="outlined" *ngFor="let movie of movies">
+            <img class="movie-poster" src="{{movie.poster}}" alt="{{movie.originalTitle}}">
+            <mat-card-content>
+                <h3 class="paragraph card-heading">Title:</h3>
+                <span class="card-heading-span">{{movie.originalTitle}}</span>
+                <h3 class="paragraph card-heading">Short Description:</h3>
+                <span class="card-heading-span">{{movie.shortDescription}}</span>
+                <h3 class="paragraph card-heading">Duration:</h3>
+                <span class="card-heading-span">{{movie.runTime}}min</span>
+            </mat-card-content>
+            <mat-card-actions class="cta-card-buttons">
+              <button  class="cta-card-button">Details</button>
+              <button  class="cta-card-button">Reserve</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="container movies-section-cta-button">
+        <a routerLink="/movies" class="cta-movie-button">Browse all films</a>
+    </div>
+    <div *ngIf="!movies && !error">
+        <p>podaci se ucitavaju</p>
+    </div>
+</section>
+<section class="testimonial-section">
+    <div class="container">
+        
+    </div>
+</section>
+
+

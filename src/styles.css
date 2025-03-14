@@ -21,6 +21,7 @@ html,
 body {  
     height: 100%;
     font-family: Roboto, "Helvetica Neue", sans-serif; 
+    color: var(--white);
 }
 
 .container{
@@ -30,6 +31,7 @@ body {
 
 .grid{
     display: grid;
+    gap: 5rem;
 }
 
 .grid--1-column{
@@ -67,5 +69,6 @@ body {
 .paragraph{
     font-size: 2.4rem;
 }
+
 
 
