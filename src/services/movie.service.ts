@@ -33,7 +33,7 @@ export class MovieService{
 
     static async getMovieById(movieId: number){
 
-        return axios.get(`/movie/${movieId}`)
+        return client.get(`/movie/${movieId}`)
 
     }
 
