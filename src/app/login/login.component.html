@@ -1,0 +1,25 @@
+<section class="login-section">
+    <div class="login-container">
+        <h2>Log In!</h2>
+
+        <div class="email-input">
+            <label class="input-label">Email: </label>
+            <mat-form-field class="input-field">
+                <mat-label>Email: </mat-label>
+                <input type="email" matInput placeholder="Enter your email" [(ngModel)]="email">
+            </mat-form-field>
+        </div>
+
+        <div class="password-input">
+        <label class="input-label">Password: </label>
+            <mat-form-field class="input-field">
+                <mat-label>Password: </mat-label>
+                <input type="password" matInput placeholder="Enter your password" [(ngModel)]="password">
+            </mat-form-field>
+        </div>
+        <button mat-flat-button (click)="doLogin()">Log In</button>
+
+        <p>I don’t have account. <a [routerLink]="['/register']">Register!</a></p>
+    </div>  
+</section>
+  

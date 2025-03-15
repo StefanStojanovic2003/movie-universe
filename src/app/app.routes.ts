@@ -5,6 +5,8 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { MoviesComponent } from './movies/movies.component';
 import { CinemasComponent } from './cinemas/cinemas.component';
 import { DetailsComponent } from './details/details.component';
+import { BookingComponent } from './booking/booking.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -13,5 +15,7 @@ export const routes: Routes = [
     { path: 'movies', component: MoviesComponent },
     { path: 'cinemas', component: CinemasComponent },
     { path: 'details/:id', component: DetailsComponent },
+    { path: 'booking/:id', component: BookingComponent },
+    { path: 'login', component: LoginComponent },
     { path: '**', redirectTo: '' }
 ];

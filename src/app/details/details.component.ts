@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieModel } from '../../models/movie.model';
 import { MovieService } from '../../services/movie.service';
-import { JsonPipe } from '@angular/common';
 import { UtilsService } from '../../services/utils.service';
+import { RouterLink } from '@angular/router';
+import { JsonPipe, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-details',
-  imports: [JsonPipe],
+  imports: [RouterLink, NgFor],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })

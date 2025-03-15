@@ -33,7 +33,7 @@
             </mat-card-content>
             <mat-card-actions class="cta-card-buttons">
               <a class="cta-card-button" [routerLink]="['details/',movie.movieId]">Details</a>
-              <a href="#" class="cta-card-button">Reserve</a>
+              <a class="cta-card-button" [routerLink]="['booking/',movie.movieId]">Reserve</a>
             </mat-card-actions>
         </mat-card>
     </div>
@@ -46,7 +46,13 @@
 </section>
 <section class="testimonial-section">
     <div class="container">
-        
+        <h2>What Our Visitors Say</h2>
+        <div class="testimonial">
+            <img class="profile-picture" src="/assets/71ee0be67a603e99a26544662f2b5442.jpeg" alt="">
+            <h4>Mark Johnson</h4>
+            <p>"An outstanding cinema experience! The picture quality and surround sound were absolutely phenomenal. Can't wait for my next visit!"</p>
+            <img class="stars-picture" src="/assets/stars.png" alt="">
+        </div>
     </div>
 </section>
 

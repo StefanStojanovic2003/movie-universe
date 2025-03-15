@@ -1,6 +1,32 @@
 <section class="hero-section">
     <div class="container">
-        <img src="{{movie!.poster}}" alt="">
+         <h1>Details About Film</h1>
+         <div class="movie-details">
+            <img src="{{movie!.poster}}" alt="">
+
+            <h2>Title: </h2>
+            <p>{{movie!.originalTitle}}</p>
+
+            <h2>Decription:</h2>
+            <p>{{movie!.description}}</p>
+
+            <h2>Duration:</h2>
+            <p>{{movie!.runTime}}min</p>
+        
+            <h2>Actors:</h2>
+            <p *ngFor="let actor of movie!.movieActors">{{actor.actor.name}}</p>
+
+            <h2>Genres:</h2>
+            <p *ngFor="let genre of movie!.movieGenres">{{genre.genre.name}}</p>
+
+            <h2>Director:</h2>
+            <p>{{movie!.director.name}}</p>
+
+            <h2>Time:</h2>
+            <p>{{utils.formatDate(movie!.startDate)}}</p>
+
+            <button><a [routerLink]="['/booking/',movie!.movieId]">BOOK NOW</a></button>
+         </div>
     </div>
 </section>
 

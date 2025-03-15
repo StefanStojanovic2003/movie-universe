@@ -1,0 +1,24 @@
+<section class="hero-section">
+    <div class="container">
+         <h1>Reserve Your Tickets</h1>
+         <div class="movie-details">
+            <img src="{{movie!.poster}}" alt="">
+
+            <h2>Title: </h2>
+            <p>{{movie!.originalTitle}}</p>
+
+            <h2>Duration:</h2>
+            <p>{{movie!.runTime}}min</p>
+
+            <h2>Genres:</h2>
+            <p *ngFor="let genre of movie!.movieGenres">{{genre.genre.name}}</p>
+
+            <h2>Time:</h2>
+            <p>15.03.2025<br/>21:00</p>
+
+            <button><a href="/contact">RESERVE</a></button>
+         </div>
+    </div>
+</section>
+
+
