@@ -43,3 +43,14 @@
     align-items: center;
     justify-content: center;
 }
+
+.log-out-button{
+    background-color: var(--red);
+    border: none;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

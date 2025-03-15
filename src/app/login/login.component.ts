@@ -27,7 +27,7 @@ export class LoginComponent {
 
   public doLogin () {
     if(UserService.login(this.email, this.password)){
-      this.router.navigate(['/gallery'])
+      this.router.navigate(['/user'])
       return
     }
     alert('Bad email or password')

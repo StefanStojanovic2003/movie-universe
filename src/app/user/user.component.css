@@ -1,0 +1,45 @@
+/* MAIN SECTION */
+
+.main-section{
+    background-color: var(--light-brown);
+    max-width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.main-header{
+    color: var(--brown);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* USER INFORMATION */
+
+.user-information{
+    background-color: var(--brown);
+    padding: 8.6rem 0rem;
+    font-size: 1.8rem;
+}
+
+.user-profile-img{
+    border-radius: 50%;
+}
+
+.user-basic-info{
+    background-color: var(--light-brown);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.change-button{
+    background-color: var(--orange);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: bold;
+}

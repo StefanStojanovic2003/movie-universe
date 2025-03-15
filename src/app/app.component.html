@@ -10,7 +10,9 @@
       <a class="navigation-link" routerLink="/">Contact Us</a>
       <a class="navigation-link" routerLink="/movies">Movies</a>
       <a class="navigation-link" routerLink="/cinemas">Cinemas</a>
-      <a class="navigation-link log-in-button" routerLink="/login">LogIn</a>
+      <a class="navigation-link log-in-button" routerLink="/login" *ngIf="!service.getActiveUser()">LogIn</a>
+      <a class="navigation-link" routerLink="/user" *ngIf="service.getActiveUser()">Profile</a>
+      <button class="navigation-link log-out-button" *ngIf="service.getActiveUser()" (click)="doLogout()">Log out</button>
     </div>
   </nav>
 </header>
