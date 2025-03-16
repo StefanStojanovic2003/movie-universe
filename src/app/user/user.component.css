@@ -28,7 +28,6 @@
 }
 
 .user-basic-info{
-    background-color: var(--light-brown);
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -42,4 +41,33 @@
     color: var(--white);
     font-size: 1.6rem;
     font-weight: bold;
+}
+
+/* ORDERS SECTION */
+
+.orders-information{
+    background-color: var(--light-brown);
+    padding: 8.6rem 0rem;
+}
+
+.custom-table{
+    background-color: var(--brown);
+    padding: 2rem 1rem;
+    border: 0.2rem solid var(--orange);
+    border-radius: 1rem;
+}
+
+.table-heading{
+    font-size: 1.8rem;
+    color: var(--orange);
+}
+
+.table-content{
+    font-size: 1.2rem;
+    color: var(--light-brown);
+}
+
+.container-user{
+    width: 90%;
+    margin: 0 auto;
 }

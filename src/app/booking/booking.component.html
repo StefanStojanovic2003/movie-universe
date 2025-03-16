@@ -1,22 +1,41 @@
 <section class="hero-section">
-    <div class="container">
+    <div class="container" *ngIf="movie">
          <h1>Reserve Your Tickets</h1>
          <div class="movie-details">
-            <img src="{{movie!.poster}}" alt="">
+            <img src="{{movie.poster}}" alt="">
 
             <h2>Title: </h2>
-            <p>{{movie!.originalTitle}}</p>
+            <p>{{movie.originalTitle}}</p>
 
             <h2>Duration:</h2>
-            <p>{{movie!.runTime}}min</p>
+            <p>{{movie.runTime}}min</p>
 
             <h2>Genres:</h2>
-            <p *ngFor="let genre of movie!.movieGenres">{{genre.genre.name}}</p>
+            <p *ngFor="let genre of movie.movieGenres">{{genre.genre.name}}</p>
 
             <h2>Time:</h2>
-            <p>{{utils.formatDate(movie!.startDate)}}</p>
+            <p>{{utils.formatDate(movie.startDate)}}</p>
 
-            <button><a href="/contact">RESERVE</a></button>
+            <mat-form-field class="full-width">
+                <mat-label>Cinema Location</mat-label>
+                <mat-select [(ngModel)]="selectedCinema">
+                  <mat-option *ngFor="let cinema of cinemas" [value]="cinema.id">{{cinema.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Choose price</mat-label>
+                <mat-select [(ngModel)]="selectedPrice">
+                  <mat-option [value]="5">Treci red - 5&euro;</mat-option>
+                  <mat-option [value]="8">Drugi red - 8&euro;</mat-option>
+                  <mat-option [value]="10">Prvi red - 10&euro;</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Ticket Count</mat-label>
+                <input type="number" matInput [(ngModel)]="selectedTicketCount">
+              </mat-form-field>
+
+            <button (click)="doOrder()"><a>RESERVE</a></button>
          </div>
     </div>
 </section>

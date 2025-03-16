@@ -4,30 +4,97 @@
     </div>
 </section>
 <section class="user-information">
-    <div class="container grid grid--4-column" *ngIf="user">
+    <div class="container grid grid--2-column" *ngIf="user">
         <div class="user-basic-info">
             <img class="user-profile-img" [src]="['https://ui-avatars.com/api/?name='+user.email]">
             <p>Total orders:{{user.orders.length}}</p>
         </div>
-        <div class="user-email">
-            <p>Email: {{user.email}}</p>
-            <button class="change-button" (click)="doChangeEmail()">Change email</button>
-        </div>
-        <div class="user-password">
-            <p>Password: {{user.password}}</p>
-            <button class="change-button" (click)="doChangePassword()">Change password</button>
+        <div>
+            <div class="user-email">
+                <p>Email: {{user.email}}</p>
+                <button class="change-button" (click)="doChangeEmail()">Change email</button>
+            </div>
+            <div class="user-password">
+                <p>Password: {{user.password}}</p>
+                <button class="change-button" (click)="doChangePassword()">Change password</button>
+            </div>
         </div>
     </div>
 </section>
 <section class="orders-information">
-    <div *ngIf="orders.length == 0">
-        <h1 style="color: blueviolet; font-size: 50px;">NEMA ORDERA</h1>
+    <div *ngIf="user">
+        <div class="container-user" *ngIf="user.orders && user.orders.length > 0">
+            <table mat-table [dataSource]="user.orders" class="mat-elevation-z8 custom-table">
+                <ng-container matColumnDef="movieId">
+                    <th mat-header-cell *matHeaderCellDef class="table-heading"> Movie Id </th>
+                    <td mat-cell *matCellDef="let element" class="table-content"> {{element.movieId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef class="table-heading"> Film Title </th>
+                <td mat-cell *matCellDef="let element" class="table-content"> {{element.title}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="startDate">
+                <th mat-header-cell *matHeaderCellDef class="table-heading"> Start Date: </th>
+                <td mat-cell *matCellDef="let element" class="table-content"> {{utils.formatDate(element.startDate)}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="runTime">
+                <th mat-header-cell *matHeaderCellDef class="table-heading"> Run Time</th>
+                <td mat-cell *matCellDef="let element" class="table-content"> {{element.runTime}}min </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="cinema">
+                <th mat-header-cell *matHeaderCellDef class="table-heading"> Cinema </th>
+                <td mat-cell *matCellDef="let element" class="table-content"> {{element.cinema.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="count">
+                    <th mat-header-cell *matHeaderCellDef class="table-heading"> Count </th>
+                    <td mat-cell *matCellDef="let element" class="table-content"> {{element.count}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef class="table-heading"> Price </th>
+                    <td mat-cell *matCellDef="let element" class="table-content"> {{element.pricePerItem}}&euro; </td>
+                </ng-container>
+
+                <ng-container matColumnDef="total">
+                    <th mat-header-cell *matHeaderCellDef class="table-heading"> Total</th>
+                    <td mat-cell *matCellDef="let element" class="table-content"> {{element.pricePerItem * element.count}}&euro; </td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef class="table-heading"> Status </th>
+                    <td mat-cell *matCellDef="let element" class="table-content"> {{element.status.toUpperCase()}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="rating">
+                    <th mat-header-cell *matHeaderCellDef class="table-heading"> Rating </th>
+                    <td mat-cell *matCellDef="let element" class="table-content"> {{element.rating}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef class="table-heading"> Actions </th>
+                    <td mat-cell *matCellDef="let element" class="table-content"> 
+                        <a mat-button [routerLink]="['/details/', element.movieId]">Details</a>
+                        <button type="button" (click)="doWatch(element)">Watched</button>
+                        <button type="button" >Cancel</button>
+                    </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
     </div>
-    <div *ngIf="orders.length > 0">
-        <h1 style="color: blueviolet;">SPISAK ORDERA</h1>
-        <ul>
-            <li *ngFor="let order of orders" style="color: blueviolet;">{{order.title}}</li>
-        </ul>
+    
+    
+    <div class=" container" *ngIf="user">
+        <div *ngIf="user.orders.length == 0">
+            <p style="color: blueviolet;">Nema ordera</p>
+        </div>
     </div>
 </section>
 

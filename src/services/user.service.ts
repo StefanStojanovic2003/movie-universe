@@ -1,3 +1,4 @@
+import { OrderModel } from "../models/order.model";
 import { UserModel } from "../models/user.model";
 
 export class UserService {
@@ -73,6 +74,50 @@ export class UserService {
                 localStorage.setItem('users', JSON.stringify(arr))
                 return true
             }
+        }
+
+        return false
+
+    }
+
+    static createOrder(order : OrderModel){
+        const arr = this.retrieveUsers()
+
+        for (let user of arr){
+            if(user.email == localStorage.getItem('active')){
+                user.orders.push(order)
+                localStorage.setItem('users', JSON.stringify(arr))
+                return true
+            }
+        }
+
+        return false
+    
+    }
+
+    static changeOrderStatus(state: 'ordered' | 'watched' | 'canceled', id: number){
+
+        const active = this.getActiveUser()
+
+        if(active){
+            
+            const arr = this.retrieveUsers()
+
+            for(let user of arr){
+
+                if(user.email == active.email){
+
+                    for(let order of user.orders){
+                        if(order.id == id){
+                            order.status= state
+                        }
+                    }
+                    localStorage.setItem('users', JSON.stringify(arr))
+                    return true
+                }
+            
+            }
+
         }
 
         return false
