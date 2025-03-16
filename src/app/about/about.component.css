@@ -1,0 +1,203 @@
+/*HERO SECTON*/
+
+.hero-section{
+    background-color: var(--light-brown);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 150px auto;
+}
+
+.hero-section .container {
+    display: flex;
+    flex-direction: column;
+    gap: 8.6rem;
+    padding: 15rem 0 10rem 0;
+}
+
+.column1, .column2 {
+    display: flex;
+    flex-direction: row;
+    gap: 20rem;
+}
+
+.column1 .text-col{
+    width: 60%;
+}
+
+.column1 .img-col{
+    width: 40%;
+}
+
+.column2 .text-col{
+    width: 60%;
+}
+
+.column2 .img-col{
+    width: 40%;
+}
+
+.column1 img {
+    width: 425px;
+    height: 642px;
+    aspect-ratio: 425/642;
+    object-fit: cover;
+}
+
+.column2 img {
+    width: 638px;
+    height: 563px;
+    aspect-ratio: 638/563;
+    object-fit: cover;
+}
+
+
+.text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.text-col h1 {
+    font-size: 7.2rem;
+    color: var(--brown);
+}
+
+.text-col p {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* WHY CHOOSE US */
+
+.why-choose-us {
+    background-color: var(--brown);
+    padding: 10rem 0;
+}
+
+.why-choose-us h2 {
+    font-size: 4.8rem;
+    color: var(--light-brown);
+    font-weight: 800;
+}
+
+.why-choose-us ul {
+    margin-top: 3rem;
+    list-style-image: "-"
+}
+
+.why-choose-us ul li::marker {
+    content: "—";
+}
+
+.why-choose-us ul li {
+    font-size: 3.6rem;
+    color: var(--orange);
+    font-weight: 500;
+    padding-left: 2rem;
+}
+
+/* LOCATION */
+
+.location {
+    background-color: var(--light-brown);
+    padding: 10rem 0;
+}
+
+.location h2 {
+    font-size: 4.8rem;
+    color: var(--brown);
+    margin-bottom: 8rem;
+}
+
+/* ACCORDION */
+
+.accordion {
+    background-color: var(--brown);
+    padding: 10rem 0;
+}
+
+.accordion h2{
+    font-size: 4.8rem;
+    color: var(--light-brown);
+    margin-bottom: 6rem;
+}
+  
+.example-accordion-item {
+    display: block;
+    background-color: var(--light-brown);
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+}
+  
+.example-accordion-item + .example-accordion-item {
+    border-top: none;
+}
+  
+.example-accordion-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 16px;
+    text-align: left;
+    font-size: 3.6rem;
+    color: var(--brown);
+    font-weight: 800;
+}
+  
+.example-accordion-item-description {
+    font-size: 2rem;
+    color: var(--white);
+}
+  
+.example-accordion-item-body {
+    padding: 3rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+  
+.example-accordion-item-header:hover {
+    cursor: pointer;
+    background-color: var(--orange);
+    border-radius: 2rem;
+}
+
+/* PARTNERS */
+
+.partners {
+    background-color: var(--light-brown);
+    padding: 10rem 0;
+}
+
+.partners h2 {
+    font-size: 4.8rem;
+    color: var(--brown);
+}
+
+.partners h3 {
+    font-size: 3.6rem;
+    color: var(--orange);
+}
+
+.partners h4 {
+    font-size: 3.2rem;
+    color: var(--brown);
+    margin-top: 3rem;
+}
+
+.partners .counters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 6rem;
+}
+
+.ticket-solds, .movies-screend, .years-of-experince, .happy-visitors {
+    text-align: center;
+}
