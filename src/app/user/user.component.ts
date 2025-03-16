@@ -55,4 +55,16 @@ export class UserComponent {
     }
   }
 
+  public doCancel(order : OrderModel ){
+    if(UserService.changeOrderStatus('canceled', order.id)){
+      this.user = UserService.getActiveUser()
+    }
+  }
+
+  public doRating(order: OrderModel, r : boolean){
+    if(UserService.changeRating(r, order.id)){
+      this.user = UserService.getActiveUser()
+    }
+  }
+
 }

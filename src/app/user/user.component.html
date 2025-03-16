@@ -72,15 +72,22 @@
 
                 <ng-container matColumnDef="rating">
                     <th mat-header-cell *matHeaderCellDef class="table-heading"> Rating </th>
-                    <td mat-cell *matCellDef="let element" class="table-content"> {{element.rating}} </td>
+                    <td mat-cell *matCellDef="let element" class="table-content"> 
+                        <p *ngIf="element.rating == null"> NO RATING</p>
+                        <p *ngIf="element.rating == true">LIKED</p>
+                        <p *ngIf="element.rating == false">DISLIKED</p>
+                    </td>
                 </ng-container>
                 
                 <ng-container matColumnDef="actions">
                     <th mat-header-cell *matHeaderCellDef class="table-heading"> Actions </th>
                     <td mat-cell *matCellDef="let element" class="table-content"> 
-                        <a mat-button [routerLink]="['/details/', element.movieId]">Details</a>
-                        <button type="button" (click)="doWatch(element)">Watched</button>
-                        <button type="button" >Cancel</button>
+                        <a [routerLink]="['/details/', element.movieId]" class="user-a-action">Details</a>
+                        <button type="button" (click)="doWatch(element)" class="user-btn-action" *ngIf="element.status == 'ordered'">Watched</button>
+                        <button type="button" (click)="doCancel(element)" class="user-btn-action cancel" *ngIf="element.status == 'ordered'">Cancel</button>
+
+                        <button type="button" (click)="doRating(element, true)" class="user-btn-action" *ngIf="element.status == 'watched' && element.rating == null">Like</button>
+                        <button type="button" (click)="doRating(element, false)" class="user-btn-action cancel" *ngIf="element.status == 'watched' && element.rating == null">Dislike</button>
                     </td>
                 </ng-container>
             
