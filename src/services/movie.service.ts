@@ -37,4 +37,8 @@ export class MovieService{
 
     }
 
+    static async getGenres(){
+        return client.get('/genre')
+    }
+
 }

@@ -1,0 +1,44 @@
+<section class="login-section">
+    <div class="signup-container">
+        <h2>Sign Up!</h2>
+        <mat-form-field class="fields">
+            <mat-label>First Name:</mat-label>
+            <input type="text" matInput placeholder="Input your First Name: " [(ngModel)]="firstName">
+        </mat-form-field>
+        <mat-form-field class="fields">
+            <mat-label>Last Name:</mat-label>
+            <input type="text" matInput placeholder="Input your Last Name: " [(ngModel)]="lastName">
+        </mat-form-field>
+        <mat-form-field class="fields">
+            <mat-label>Email:</mat-label>
+            <input type="email" matInput placeholder="Input your Email: " [(ngModel)]="email">
+        </mat-form-field>
+        <mat-form-field class="fields">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Input your Password: " [(ngModel)]="password">
+        </mat-form-field>
+        <mat-form-field class="fields">
+            <mat-label>Repeat Password:</mat-label>
+            <input type="password" matInput placeholder="Repeat Password: " [(ngModel)]="repeatPassword">
+        </mat-form-field>
+        <mat-form-field class="fields">
+            <mat-label>Phone:</mat-label>
+            <input type="tel" matInput placeholder="Input your Phone Number: " [(ngModel)]="phone">
+        </mat-form-field>
+        <mat-form-field class="fields">
+            <mat-label>Address:</mat-label>
+            <input type="text" matInput placeholder="Input your Address: " [(ngModel)]="address">
+        </mat-form-field>
+        <mat-form-field class="fields">
+            <mat-label>Favorite Genre</mat-label>
+            <mat-select [disabled]="!genreList">
+                <mat-option *ngFor="let genre of genreList" [value]="genre">{{genre}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        
+        <button mat-button (click)="doSignup()">Sign Up</button>
+
+        <p>I already have account. <a [routerLink]="['/login']">Login!</a></p>
+    </div>  
+</section>
