@@ -4,11 +4,11 @@ import { MovieModel } from '../../models/movie.model';
 import { MovieService } from '../../services/movie.service';
 import { UtilsService } from '../../services/utils.service';
 import { RouterLink } from '@angular/router';
-import { JsonPipe, NgFor } from '@angular/common';
+import { JsonPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-details',
-  imports: [RouterLink, NgFor],
+  imports: [RouterLink, NgFor, NgIf],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })

@@ -14,7 +14,7 @@
             <p *ngFor="let genre of movie!.movieGenres">{{genre.genre.name}}</p>
 
             <h2>Time:</h2>
-            <p>15.03.2025<br/>21:00</p>
+            <p>{{utils.formatDate(movie!.startDate)}}</p>
 
             <button><a href="/contact">RESERVE</a></button>
          </div>

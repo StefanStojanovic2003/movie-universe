@@ -63,5 +63,21 @@ export class UserService {
 
     }
 
+    static changeEmail(newEmail : string) : boolean{
+        
+        const arr = this.retrieveUsers()
+
+        for(let user of arr){
+            if(user.email == localStorage.getItem('active')){
+                user.email = newEmail
+                localStorage.setItem('users', JSON.stringify(arr))
+                return true
+            }
+        }
+
+        return false
+
+    }
+
 
 }

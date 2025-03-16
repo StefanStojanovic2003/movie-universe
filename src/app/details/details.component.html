@@ -1,31 +1,31 @@
 <section class="hero-section">
-    <div class="container">
+    <div class="container" *ngIf="movie">
          <h1>Details About Film</h1>
          <div class="movie-details">
-            <img src="{{movie!.poster}}" alt="">
+            <img src="{{movie.poster}}" alt="">
 
             <h2>Title: </h2>
-            <p>{{movie!.originalTitle}}</p>
+            <p>{{movie.originalTitle}}</p>
 
             <h2>Decription:</h2>
-            <p>{{movie!.description}}</p>
+            <p>{{movie.description}}</p>
 
             <h2>Duration:</h2>
-            <p>{{movie!.runTime}}min</p>
+            <p>{{movie.runTime}}min</p>
         
             <h2>Actors:</h2>
-            <p *ngFor="let actor of movie!.movieActors">{{actor.actor.name}}</p>
+            <p *ngFor="let actor of movie.movieActors">{{actor.actor.name}}</p>
 
             <h2>Genres:</h2>
-            <p *ngFor="let genre of movie!.movieGenres">{{genre.genre.name}}</p>
+            <p *ngFor="let genre of movie.movieGenres">{{genre.genre.name}}</p>
 
             <h2>Director:</h2>
-            <p>{{movie!.director.name}}</p>
+            <p>{{movie.director.name}}</p>
 
             <h2>Time:</h2>
-            <p>{{utils.formatDate(movie!.startDate)}}</p>
+            <p>{{utils.formatDate(movie.startDate)}}</p>
 
-            <button><a [routerLink]="['/booking/',movie!.movieId]">BOOK NOW</a></button>
+            <button><a [routerLink]="['/details/'+movie.movieId+'/booking']">BOOK NOW</a></button>
          </div>
     </div>
 </section>

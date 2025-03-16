@@ -15,8 +15,8 @@ export const routes: Routes = [
     { path: 'gallery', component: GalleryComponent },
     { path: 'movies', component: MoviesComponent },
     { path: 'cinemas', component: CinemasComponent },
+    { path: 'details/:id/booking', component: BookingComponent },
     { path: 'details/:id', component: DetailsComponent },
-    { path: 'booking/:id', component: BookingComponent },
     { path: 'login', component: LoginComponent },
     { path: 'user', component: UserComponent },
     { path: '**', redirectTo: '' }

@@ -35,4 +35,13 @@ export class UserComponent {
     alert(UserService.changePassword(newPassword) ? 'Password has been changed' : 'Failed to change password')
   }
 
+  public doChangeEmail(){
+    const newEmail = prompt('Enter your new email:')
+    if(newEmail == '' || newEmail== null){
+      alert("Password can't be empty")
+      return
+    }
+    alert(UserService.changeEmail(newEmail) ? 'Email has been changed' : 'Failed to change email')
+  }
+
 }
