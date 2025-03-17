@@ -67,3 +67,15 @@
     color: var(--orange);
     text-decoration: none;
 }
+
+.log-in-input-field{
+    width: 100%;
+    color: var(--brown);
+    padding: 0.8rem 0.5rem;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--brown);
+}
+
+.log-in-input-field::placeholder{
+    color: var(--brown);
+}
