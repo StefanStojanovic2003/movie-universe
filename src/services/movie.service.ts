@@ -41,4 +41,20 @@ export class MovieService{
         return client.get('/genre')
     }
 
+    static async getDirectors() {
+        return client.get('/director');
+    }
+    
+    static async getActors() {
+        return client.get('/actor');
+    }
+    
+    static async getRuntimes() {
+        return client.get('/movie/runtime');
+    }
+    
+    static async searchMovies(filters: any) {
+        return client.get('/movie', { params: filters });
+    }
+
 }
