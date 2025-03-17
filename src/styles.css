@@ -28,6 +28,7 @@ body {
 .container{
     margin: 0 auto;
     max-width: 130rem;
+    padding: 0 5%;
 }
 
 .grid{
@@ -45,6 +46,12 @@ body {
 
 .grid--3-column{
     grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1150px) {
+    .grid--3-column{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .grid--4-column{
