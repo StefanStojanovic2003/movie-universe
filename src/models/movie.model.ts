@@ -1,6 +1,7 @@
 export interface MovieModel{
 
     movieId : number
+    title : string
     director: {
         directorId: number,
         name: string,
