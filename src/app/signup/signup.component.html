@@ -31,7 +31,7 @@
         </mat-form-field>
         <mat-form-field class="fields">
             <mat-label>Favorite Genre</mat-label>
-            <mat-select [disabled]="!genreList">
+            <mat-select [disabled]="!genreList" [(ngModel)]="genre">
                 <mat-option *ngFor="let genre of genreList" [value]="genre">{{genre}}</mat-option>
             </mat-select>
         </mat-form-field>

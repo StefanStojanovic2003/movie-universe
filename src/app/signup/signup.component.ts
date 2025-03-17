@@ -3,14 +3,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButton } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MovieService } from '../../services/movie.service';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-signup',
-  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, MatButton, RouterLink, FormsModule, RouterLink, NgFor, NgIf, MatSelectModule],
+  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, MatButton, RouterLink, FormsModule, RouterLink, NgFor, MatSelectModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
@@ -26,14 +27,37 @@ export class SignupComponent {
   public address = ''
   public genre = ''
 
-  public constructor(){
+  public constructor(private router: Router){
     MovieService.getGenres()
     .then(rsp => {
       this.genreList = rsp.data.map((genre : any) => genre.name)
     })
   }
 
-  public doSignup(){}
+  public doSignup(){
+    if(this.email == '' || this.password == '') {
+      alert('Email and password are required fields')
+      return
+    }
+
+    if(this.password !== this.repeatPassword) {
+      alert('Passwords dont match')
+      return
+    }
+
+    const result = UserService.createUser({
+      email: this.email,
+      password: this.password,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      phone: this.phone,
+      address: this.address,
+      favouriteGenre: this.genre,
+      orders: []
+    })
+
+    result ? this.router.navigate(['/login']) : alert('Email is already taken')
+  }
 
 
 }
