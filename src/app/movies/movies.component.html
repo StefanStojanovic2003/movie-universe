@@ -5,30 +5,32 @@
     </div>
 </section>
 <section class="movies-section">
-    <div class="container">
-        <input type="text" [(ngModel)]="searchQuery" placeholder="Pretraži filmove..." />
+    <div class="container position">
+        <div class="filter-inputs">
+            <input class="search" type="text" [(ngModel)]="searchQuery" placeholder="Pretraži filmove..." />
 
-        <select [(ngModel)]="selectedGenre">
-            <option [value]="null">Izaberi žanr</option>
-            <option *ngFor="let genre of genres" [value]="genre.genreId">{{ genre.name }}</option>
-        </select>
-
-        <select [(ngModel)]="selectedDirector">
-            <option [value]="null">Izaberi režisera</option>
-            <option *ngFor="let director of directors" [value]="director.directorId">{{ director.name }}</option>
-        </select>
-
-        <select [(ngModel)]="selectedActor">
-            <option [value]="null">Izaberi glumca</option>
-            <option *ngFor="let actor of actors" [value]="actor.actorId">{{ actor.name }}</option>
-        </select>
-
-        <select [(ngModel)]="selectedRuntime">
-            <option [value]="null">Izaberi trajanje</option>
-            <option *ngFor="let runtime of runtimes" [value]="runtime">{{ runtime }} min</option>
-        </select>
-
-        <button (click)="searchMovies()">Pretraži</button>
+            <select [(ngModel)]="selectedGenre" class="select-field">
+                <option [value]="null">Izaberi žanr</option>
+                <option *ngFor="let genre of genres" [value]="genre.genreId">{{ genre.name }}</option>
+            </select>
+    
+            <select [(ngModel)]="selectedDirector" class="select-field">
+                <option [value]="null">Izaberi režisera</option>
+                <option *ngFor="let director of directors" [value]="director.directorId">{{ director.name }}</option>
+            </select>
+    
+            <select [(ngModel)]="selectedActor" class="select-field">
+                <option [value]="null">Izaberi glumca</option>
+                <option *ngFor="let actor of actors" [value]="actor.actorId">{{ actor.name }}</option>
+            </select>
+    
+            <select [(ngModel)]="selectedRuntime" class="select-field">
+                <option [value]="null">Izaberi trajanje</option>
+                <option *ngFor="let runtime of runtimes" [value]="runtime">{{ runtime }} min</option>
+            </select>
+    
+            <button (click)="searchMovies()" class="search-button">Pretrazi</button>
+        </div>
     </div>
     <div class="container grid grid--3-column" *ngIf="movies">
         <mat-card class="example-card" *ngFor="let movie of movies">
