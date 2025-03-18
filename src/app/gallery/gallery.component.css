@@ -34,6 +34,15 @@
 
 /* GALLERY SECTION */
 
+.position{
+    margin-bottom: 4.8rem;
+    text-align: center;
+}
+
+.gallery-heading{
+    color: var(--brown);
+}
+
 .gallery-section {
     background-color: var(--orange);
     padding-top: 100px;
