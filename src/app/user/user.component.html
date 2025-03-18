@@ -9,14 +9,30 @@
             <img class="user-profile-img" [src]="['https://ui-avatars.com/api/?name='+user.email]">
             <p>Total orders:{{user.orders.length}}</p>
         </div>
-        <div>
-            <div class="user-email">
+        <div class="data">
+            <div class="user-info">
                 <p>Email: {{user.email}}</p>
                 <button class="change-button" (click)="doChangeEmail()">Change email</button>
             </div>
-            <div class="user-password">
+            <div class="user-info">
                 <p>Password: {{user.password}}</p>
                 <button class="change-button" (click)="doChangePassword()">Change password</button>
+            </div>
+            <div class="user-info">
+                <p>First Name: {{user.firstName}}</p>
+                <button class="change-button" (click)="doChangeFirstName()">Change first name</button>
+            </div>
+            <div class="user-info">
+                <p>Last Name: {{user.lastName}}</p>
+                <button class="change-button" (click)="doChangeLastName()">Change last name</button>
+            </div>
+            <div class="user-info">
+                <p>Phone: {{user.phone}}</p>
+                <button class="change-button" (click)="doChangePhone()">Change phone number</button>
+            </div>
+            <div class="user-info">
+                <p>Address: {{user.address}}</p>
+                <button class="change-button" (click)="doChangeAddress()">Change your address</button>
             </div>
         </div>
     </div>

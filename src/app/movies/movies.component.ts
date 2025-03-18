@@ -59,4 +59,14 @@ export class MoviesComponent {
     this.movies = (await MovieService.searchMovies(filters)).data;
   }
 
+  async resetSearch(){
+    this.selectedActor = null;
+    this.selectedGenre = null;
+    this.selectedDirector = null;
+    this.selectedRuntime = null;
+    this.searchQuery = '';
+
+    this.movies = (await MovieService.getMovies()).data;
+  }
+
 }

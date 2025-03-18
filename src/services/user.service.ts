@@ -99,6 +99,70 @@ export class UserService {
 
     }
 
+    static changeFirstName(newFirstName : string) : boolean{
+        
+        const arr = this.retrieveUsers()
+
+        for(let user of arr){
+            if(user.email == localStorage.getItem('active')){
+                user.firstName = newFirstName
+                localStorage.setItem('users', JSON.stringify(arr))
+                return true
+            }
+        }
+
+        return false
+
+    }
+
+    static changeLastName(newLastName : string) : boolean{
+        
+        const arr = this.retrieveUsers()
+
+        for(let user of arr){
+            if(user.email == localStorage.getItem('active')){
+                user.lastName = newLastName
+                localStorage.setItem('users', JSON.stringify(arr))
+                return true
+            }
+        }
+
+        return false
+
+    }
+
+    static changePhone(newPhone : string) : boolean{
+        
+        const arr = this.retrieveUsers()
+
+        for(let user of arr){
+            if(user.email == localStorage.getItem('active')){
+                user.phone = newPhone
+                localStorage.setItem('users', JSON.stringify(arr))
+                return true
+            }
+        }
+
+        return false
+
+    }
+
+    static changeAddress(newAddress : string) : boolean{
+        
+        const arr = this.retrieveUsers()
+
+        for(let user of arr){
+            if(user.email == localStorage.getItem('active')){
+                user.address = newAddress
+                localStorage.setItem('users', JSON.stringify(arr))
+                return true
+            }
+        }
+
+        return false
+
+    }
+
     static createOrder(order : OrderModel){
         const arr = this.retrieveUsers()
 
