@@ -1,37 +1,46 @@
-<section class="login-section">
+<section class="signup-section">
     <div class="signup-container">
         <h2>Sign Up!</h2>
-        <mat-form-field class="fields">
+
+        <label class="input-label">First Name: </label>
+        <mat-form-field class="input-field">
             <mat-label>First Name:</mat-label>
-            <input type="text" matInput placeholder="Input your First Name: " [(ngModel)]="firstName">
+            <input type="text" matInput placeholder="Input your First Name: " [(ngModel)]="firstName" class="sing-up-input-field">
         </mat-form-field>
-        <mat-form-field class="fields">
+        <label class="input-label">Last Name: </label>
+        <mat-form-field class="input-field">
             <mat-label>Last Name:</mat-label>
-            <input type="text" matInput placeholder="Input your Last Name: " [(ngModel)]="lastName">
+            <input type="text" matInput placeholder="Input your Last Name: " [(ngModel)]="lastName" class="sing-up-input-field">
         </mat-form-field>
-        <mat-form-field class="fields">
+        <label class="input-label">Email: </label>
+        <mat-form-field class="input-field">
             <mat-label>Email:</mat-label>
-            <input type="email" matInput placeholder="Input your Email: " [(ngModel)]="email">
+            <input type="email" matInput placeholder="Input your Email: " [(ngModel)]="email" class="sing-up-input-field">
         </mat-form-field>
-        <mat-form-field class="fields">
+        <label class="input-label">Password: </label>
+        <mat-form-field class="input-field">
             <mat-label>Password</mat-label>
-            <input type="password" matInput placeholder="Input your Password: " [(ngModel)]="password">
+            <input type="password" matInput placeholder="Input your Password: " [(ngModel)]="password" class="sing-up-input-field">
         </mat-form-field>
-        <mat-form-field class="fields">
+        <label class="input-label">Repeat Password: </label>
+        <mat-form-field class="input-field">
             <mat-label>Repeat Password:</mat-label>
-            <input type="password" matInput placeholder="Repeat Password: " [(ngModel)]="repeatPassword">
+            <input type="password" matInput placeholder="Repeat Password: " [(ngModel)]="repeatPassword" class="sing-up-input-field">
         </mat-form-field>
-        <mat-form-field class="fields">
+        <label class="input-label">Phone: </label>
+        <mat-form-field class="input-field">
             <mat-label>Phone:</mat-label>
-            <input type="tel" matInput placeholder="Input your Phone Number: " [(ngModel)]="phone">
+            <input type="tel" matInput placeholder="Input your Phone Number: " [(ngModel)]="phone" class="sing-up-input-field">
         </mat-form-field>
-        <mat-form-field class="fields">
+        <label class="input-label">Address: </label>
+        <mat-form-field class="input-field">
             <mat-label>Address:</mat-label>
-            <input type="text" matInput placeholder="Input your Address: " [(ngModel)]="address">
+            <input type="text" matInput placeholder="Input your Address: " [(ngModel)]="address" class="sing-up-input-field">
         </mat-form-field>
-        <mat-form-field class="fields">
+        <label class="input-label">Favorite Genre: </label>
+        <mat-form-field class="input-field">
             <mat-label>Favorite Genre</mat-label>
-            <mat-select [disabled]="!genreList" [(ngModel)]="genre">
+            <mat-select matInput [disabled]="!genreList" [(ngModel)]="genre">
                 <mat-option *ngFor="let genre of genreList" [value]="genre">{{genre}}</mat-option>
             </mat-select>
         </mat-form-field>

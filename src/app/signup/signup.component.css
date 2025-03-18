@@ -1,30 +1,67 @@
-.login-section {
+.signup-section {
     width: 100%;
-    height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/login-bg.jpeg);
     background-size: cover;
     background-position: center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10rem 0;
 }
 
 .signup-container {
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    top: 55%;
-    left: 50%;
-    transform: translate(-55%, -50%); 
     background-color: var(--light-brown);
     padding: 2rem 4rem;
     border-radius: 2rem;
     width: 60rem;
 }
 
-.login-container h2 {
+.signup-container h2 {
     font-size: 3.6rem;
     color: var(--brown);
     font-weight: 800;
     margin-bottom: 2rem;
+}
+
+.sing-up-input-field{
+    width: 100%;
+    color: var(--brown);
+    padding: 0.8rem 0.5rem;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--brown);
+}
+
+.signup-container button {
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 800;
+    border-radius: 1rem;
+}
+
+.signup-container p {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--brown);
+    align-self: center;
+}
+
+.signup-container p a {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.sing-up-input-field::placeholder{
+    color: var(--brown);
+}
+
+.input-label {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--orange);
+    margin-bottom: 1rem;
 }
