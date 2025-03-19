@@ -47,8 +47,8 @@
 }
 
 .column2 img {
-    width: 638px;
-    height: 563px;
+    width: 438px;
+    height: 363px;
     aspect-ratio: 638/563;
     object-fit: cover;
 }
