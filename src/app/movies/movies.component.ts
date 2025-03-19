@@ -63,6 +63,11 @@ export class MoviesComponent {
     if (this.searchQuery) filters.search = this.searchQuery;
 
     this.movies = (await MovieService.searchMovies(filters)).data;
+
+    for (let m of this.movies!) {
+      m.rating = Math.round((Math.random() * 4 + 1) * 10) / 10;
+    }
+    this.filterByRating();
   }
 
   async resetSearch(){
@@ -73,11 +78,15 @@ export class MoviesComponent {
     this.searchQuery = '';
 
     this.movies = (await MovieService.getMovies()).data;
+    for (let m of this.movies!) {
+      m.rating = Math.round((Math.random() * 4 + 1) * 10) / 10;
+    }
+    this.filterByRating();
   }
 
   async filterByRating() {
-      if (!this.movies) return; // Ako movies nije učitan, izađi iz funkcije
-      if (this.minRating === null) return; // Ako minRating nije postavljen, ne filtriraj
+      if (!this.movies) return; 
+      if (this.minRating === null) return; 
     
       this.movies = this.movies.filter(movie => movie.rating >= this.minRating);
   }
@@ -85,6 +94,11 @@ export class MoviesComponent {
   async resetRaiting(){
     this.minRating = 1;
     this.movies = (await MovieService.getMovies()).data;
+    for (let m of this.movies!) {
+      m.rating = Math.round((Math.random() * 4 + 1) * 10) / 10;
+    }
+
+    this.filterByRating();
   }
 
 }
