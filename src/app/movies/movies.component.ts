@@ -27,6 +27,7 @@ export class MoviesComponent {
   selectedActor: number | null = null
   selectedRuntime: number | null = null
   searchQuery: string = ''
+  minRating: number = 1
 
   constructor(){
     this.loadFilters();
@@ -72,6 +73,13 @@ export class MoviesComponent {
     this.searchQuery = '';
 
     this.movies = (await MovieService.getMovies()).data;
+  }
+
+  filterByRating() {
+      if (!this.movies) return; // Ako movies nije učitan, izađi iz funkcije
+      if (this.minRating === null) return; // Ako minRating nije postavljen, ne filtriraj
+    
+      this.movies = this.movies.filter(movie => movie.rating >= this.minRating);
   }
 
 }

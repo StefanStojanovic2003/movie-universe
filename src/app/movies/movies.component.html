@@ -32,6 +32,13 @@
             <button (click)="searchMovies()" class="search-button">Pretrazi</button>
             <button (click)="resetSearch()" class="reset-button">Reset</button>
         </div>
+        <div class="raiting">
+            <select class="select-field" [(ngModel)]="minRating">
+                <option [value]="null">Raiting:</option>
+                <option *ngFor="let r of [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]" [value]="r">{{ r }}</option>
+              </select>
+            <button (click)="filterByRating()" class="search-button">Filter by Rating</button>
+        </div>
     </div>
     <div class="container grid grid--3-column" *ngIf="movies">
         <mat-card class="example-card" *ngFor="let movie of movies">
