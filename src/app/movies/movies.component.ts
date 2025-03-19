@@ -91,14 +91,18 @@ export class MoviesComponent {
       this.movies = this.movies.filter(movie => movie.rating >= this.minRating);
   }
 
-  async resetRaiting(){
-    this.minRating = 1;
-    this.movies = (await MovieService.getMovies()).data;
-    for (let m of this.movies!) {
-      m.rating = Math.round((Math.random() * 4 + 1) * 10) / 10;
+  async resetRaiting() {
+    this.minRating = 1;  // Podesi minimalnu ocenu na početnu vrednost
+    if (this.selectedGenre || this.selectedDirector || this.selectedActor || this.selectedRuntime || this.searchQuery) {
+      // Ako su ostali filteri aktivni, ponovo filtriraj filmove na osnovu tih filtera
+      await this.searchMovies(); 
+    } else {
+      // Ako nisu izabrani drugi filteri, učitaj sve filmove
+      this.movies = (await MovieService.getMovies()).data;
+      for (let m of this.movies!) {
+        m.rating = Math.round((Math.random() * 4 + 1) * 10) / 10;
+      }
     }
-
-    this.filterByRating();
   }
 
 }
