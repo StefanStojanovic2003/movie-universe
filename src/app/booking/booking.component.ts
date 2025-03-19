@@ -24,6 +24,7 @@ export class BookingComponent {
   public selectedCinema: number = this.cinemas[0].id
   public selectedTicketCount: number = 1
   public selectedPrice : number = 150
+  public selectedTime : string = '21:00'
 
   
     public constructor(private route : ActivatedRoute, public utils: UtilsService, private router : Router){
@@ -46,6 +47,7 @@ export class BookingComponent {
         cinema: CinemasService.getCinemaById(this.selectedCinema)!,
         count: this.selectedTicketCount,
         pricePerItem: this.selectedPrice,
+        time: this.selectedTime,
         status: 'ordered',
         rating: null ,
       })

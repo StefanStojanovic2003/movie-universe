@@ -17,7 +17,7 @@ import { OrderModel } from '../../models/order.model';
 })
 export class UserComponent {
 
-  public displayedColumns : string[] = ['movieId', 'title', 'startDate', 'runTime', 'cinema', 'count', 'price', 'total', 'status', 'rating', 'actions']
+  public displayedColumns : string[] = ['movieId', 'title', 'startDate', 'runTime', 'cinema', 'time', 'count', 'price', 'total', 'status', 'rating', 'actions']
   public user : UserModel | null = null
   
 

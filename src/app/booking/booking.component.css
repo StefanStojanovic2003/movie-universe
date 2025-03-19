@@ -62,3 +62,16 @@
     text-decoration: none;
     text-align: center;
 }
+
+.full-width{
+    width: 100%;
+    font-size: 1.8rem;
+}
+
+.date{
+    margin-bottom: 3rem;
+}
+
+.label{
+    font-size: 1.8rem;
+}

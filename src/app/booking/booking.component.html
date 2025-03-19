@@ -14,16 +14,16 @@
             <p *ngFor="let genre of movie.movieGenres">{{genre.genre.name}}</p>
 
             <h2>Time:</h2>
-            <p>{{utils.formatDate(movie.startDate)}}</p>
+            <p class="date">{{utils.formatDate(movie.startDate)}}</p>
 
             <mat-form-field class="full-width">
-                <mat-label>Cinema Location</mat-label>
+                <mat-label class="label">Cinema Location</mat-label>
                 <mat-select [(ngModel)]="selectedCinema">
                   <mat-option *ngFor="let cinema of cinemas" [value]="cinema.id">{{cinema.name}}</mat-option>
                 </mat-select>
               </mat-form-field>
               <mat-form-field class="full-width">
-                <mat-label>Choose price</mat-label>
+                <mat-label class="label">Choose price</mat-label>
                 <mat-select [(ngModel)]="selectedPrice">
                   <mat-option [value]="5">Treci red - 5&euro;</mat-option>
                   <mat-option [value]="8">Drugi red - 8&euro;</mat-option>
@@ -31,8 +31,16 @@
                 </mat-select>
               </mat-form-field>
               <mat-form-field class="full-width">
-                <mat-label>Ticket Count</mat-label>
-                <input type="number" matInput [(ngModel)]="selectedTicketCount">
+                <mat-label class="label">Choose time</mat-label>
+                <mat-select [(ngModel)]="selectedTime">
+                  <mat-option [value]="'18:00'">18:00&times;</mat-option>
+                  <mat-option [value]="'20:00'">20:00&times;</mat-option>
+                  <mat-option [value]="'22:00'">22:00&times;</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label class="label">Ticket Count</mat-label>
+                <input type="number" matInput [(ngModel)]="selectedTicketCount" class="full-width">
               </mat-form-field>
 
             <button (click)="doOrder()"><a>RESERVE</a></button>

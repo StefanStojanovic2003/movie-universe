@@ -9,6 +9,7 @@ export interface OrderModel{
     cinema: CinemasModel
     count: number
     pricePerItem: number
+    time : string
     status: 'ordered' | 'watched' | 'canceled'
     rating: null | boolean
 }
