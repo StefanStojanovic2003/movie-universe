@@ -43,6 +43,8 @@
                 <span class="card-heading-span">{{movie.shortDescription}}</span>
                 <h3 class="paragraph card-heading">Duration:</h3>
                 <span class="card-heading-span">{{movie.runTime}}min</span>
+                <h3 class="paragraph card-heading">Rating:</h3>
+                <span class="card-heading-span">{{movie.rating}}&star;</span>
             </mat-card-content>
             <mat-card-actions class="cta-card-buttons">
               <a class="cta-card-button" [routerLink]="['/details/',movie.movieId]">Details</a>

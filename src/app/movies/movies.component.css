@@ -81,7 +81,7 @@
 
 .example-card{
     max-width: 50rem;
-    max-height: 80rem;
+    max-height: 90rem;
     padding: 3rem 4.5rem;
     background-color: var(--light-brown);
 }

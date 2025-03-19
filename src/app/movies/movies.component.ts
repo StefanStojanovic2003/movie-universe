@@ -33,7 +33,12 @@ export class MoviesComponent {
     this.loadMovies();
     
       MovieService.getMovies()
-        .then(rsp=> this.movies = rsp.data)
+        .then(rsp=> {
+          this.movies = rsp.data
+          for(let m of this.movies!){
+            m.rating = Math.round((Math.random() * 4 + 1) * 10) / 10;
+          }
+        })
   
   }
 

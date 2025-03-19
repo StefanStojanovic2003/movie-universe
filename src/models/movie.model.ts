@@ -13,6 +13,7 @@ export interface MovieModel{
     runTime : number
     startDate : string
     poster : string
+    rating : number
     movieActors : Array<{
             movieActorId: number,
             movieId: number,
