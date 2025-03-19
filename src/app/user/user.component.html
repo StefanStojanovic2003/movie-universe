@@ -114,9 +114,10 @@
     </div>
     
     
-    <div class=" container" *ngIf="user">
-        <div *ngIf="user.orders.length == 0">
-            <p style="color: blueviolet;">Nema ordera</p>
+    <div class=" container no-order" *ngIf="user">
+        <div class="container-order" *ngIf="user.orders.length == 0">
+            <p>Nema ordera</p>
+            <a routerLink="/movies">Pogledajte nasu ponudu>></a>
         </div>
     </div>
 </section>
