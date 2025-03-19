@@ -141,3 +141,9 @@
     font-size: 3.2rem;
     border-radius: 1rem;
 }
+
+.raiting{
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+}
