@@ -75,11 +75,16 @@ export class MoviesComponent {
     this.movies = (await MovieService.getMovies()).data;
   }
 
-  filterByRating() {
+  async filterByRating() {
       if (!this.movies) return; // Ako movies nije učitan, izađi iz funkcije
       if (this.minRating === null) return; // Ako minRating nije postavljen, ne filtriraj
     
       this.movies = this.movies.filter(movie => movie.rating >= this.minRating);
+  }
+
+  async resetRaiting(){
+    this.minRating = 1;
+    this.movies = (await MovieService.getMovies()).data;
   }
 
 }
